@@ -42,6 +42,9 @@ function PostProvider({ children }) {
   }, []);
 
   async function fetchIndividialPost(id) {
+    setIsLoading(true);
+    setIsError("");
+
     try {
       const res = await fetch(
         `https://jsonplaceholder.typicode.com/posts/${id}`
